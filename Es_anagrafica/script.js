@@ -4,7 +4,7 @@ function Tabella() {
     let xhr = new XMLHttpRequest();
 
 
-    xhr.open("GET", "Es_anagrafica/dati.json", true);
+    xhr.open("GET", "https://stefanomerigo.github.io/TPS/Es_anagrafica/dati.json", true);
     xhr.send();
 
     xhr.onload = function () {
@@ -51,7 +51,7 @@ function Tabella() {
 function Maggiorenni() {
     let xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "Es_anagrafica/dati.json", true);
+    xhr.open("GET", "https://stefanomerigo.github.io/TPS/Es_anagrafica/dati.json", true);
     xhr.send();
 
     xhr.onload = function () {
@@ -102,7 +102,7 @@ function Maggiorenni() {
 function RicercaLettera() {
     let xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "Es_anagrafica/dati.json", true);
+    xhr.open("GET", "https://stefanomerigo.github.io/TPS/Es_anagrafica/dati.json", true);
     xhr.send();
 
     xhr.onload = function () {
@@ -154,7 +154,7 @@ function RicercaLettera() {
 function RicercaGenerazione() {
     let xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "Es_anagrafica/dati.json", true);
+    xhr.open("GET", "https://stefanomerigo.github.io/TPS/Es_anagrafica/dati.json", true);
     xhr.send();
 
     xhr.onload = function () {
