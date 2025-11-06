@@ -8,7 +8,7 @@ var stampa4 = "";
 
 var xmlhttp = new XMLHttpRequest();
 
-xmlhttp.open("GET", "elenco.xml", true);
+xmlhttp.open("GET", "stefanomerigo.github.io/TPS/elenco.xml", true);
 
 xmlhttp.send();
 
@@ -36,7 +36,7 @@ xmlhttp.onreadystatechange = function () {
 };
 
 function inizio(){
-    xmlhttp.open("GET", "elenco.xml", true);
+    xmlhttp.open("GET", "stefanomerigo.github.io/TPS/elenco.xml", true);
     xmlhttp.send();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -61,7 +61,7 @@ function inizio(){
 function ricercaEta() {
     var minEta = document.getElementById("anni").value;
     document.getElementById("anni").value = "";
-    xmlhttp.open("GET", "elenco.xml", true);
+    xmlhttp.open("GET", "stefanomerigo.github.io/TPS/elenco.xml", true);
     xmlhttp.send();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -91,7 +91,7 @@ function ricercaIniziale() {
         var iniziale = document.getElementById("iniziale").value.charAt(0).toUpperCase();
         document.getElementById("iniziale").value = "";
     }
-    xmlhttp.open("GET", "elenco.xml", true);
+    xmlhttp.open("GET", "stefanomerigo.github.io/TPS/elenco.xml", true);
     xmlhttp.send();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -117,7 +117,7 @@ function ricercaIniziale() {
 
 function generazione() {
     var iniziale = document.getElementById("iniziale").value;
-    xmlhttp.open("GET", "elenco.xml", true);
+    xmlhttp.open("GET", "stefanomerigo.github.io/TPS/elenco.xml", true);
     xmlhttp.send();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -160,4 +160,5 @@ function generazione() {
     Generazione X  (1965-1980)
     Millenials  (1981-1996)
     Generazione Z (1997-2012) 
+
     Generazione Alpha (dal 2013 in poi)*/
