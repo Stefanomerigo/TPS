@@ -1,0 +1,28 @@
+[
+    {
+        "nome": "Monitor 4K",
+        "dettagli": "Schermo ultra-HD da 27 pollici con colori vividi e dettagli nitidi.",
+        "prezzo": 329.99
+
+    },
+    {
+        "nome": "Tastiera Meccanica",
+        "dettagli": "Tastiera retroilluminata con switch silenziosi e risposta rapida.",
+        "prezzo": 89.99
+    },
+    {
+        "nome": "Mouse Wireless",
+        "dettagli": "Mouse ergonomico con batteria lunga durata e alta precisione.",
+        "prezzo": 49.99
+    },
+    {
+        "nome": "Speaker Bluetooth",
+        "dettagli": "Altoparlante portatile con suono potente e connessione rapida.",
+        "prezzo": 129.99
+    },
+    {
+        "nome": "Webcam HD",
+        "dettagli": "Webcam con video nitido e microfono integrato per videoconferenze.",
+        "prezzo": 59.99
+    }
+]

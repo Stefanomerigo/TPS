@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Commerce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f9;
+    padding: 25px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+#buttons {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 12px 22px;
+    margin: 6px;
+    border: none;
+    background: #5d81a8;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #4a6990; 
+    transform: translateY(-2px);
+}
+
+table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #5d81a8; 
+    color: white;
+}
+
+tr:hover td {
+    background: #e1e8f0; 
+}
+
+</style>
+
+<body>
+    <title>E-Commerce</title>
+
+    <h1>E-Commerce</h1>
+    <h1>Catalogo Prodotti</h1>
+
+    <div id="buttons">
+        <button onclick="LetturaXML()">Mostra XML</button>
+        <button onclick="LetturaJSON()">Mostra JSON</button>
+        <button onclick="LetturaCSV()">Mostra CSV</button>
+        <button onclick="LetturaTXT()">Mostra TXT</button>
+    </div>
+
+    <table id="tabella">
+        <tr>
+            <th>nome</th>
+            <th>dettagli</th>
+            <th>prezzo</th>
+            <th></th>
+        </tr>
+    </table>
+</body>
+</html>
+
+
+
+
+    <script>
+function resettaTabella() {
+    const tabellaProdotti = document.getElementById("tabella");
+    if (!tabellaProdotti) return;
+    tabellaProdotti.innerHTML = "<tr><th>nome</th><th>dettagli</th><th>prezzo</th><th></th></tr>";
+}
+
+
+function LetturaXML() {
+    resettaTabella();
+
+    let richiestaXML = new XMLHttpRequest();
+    richiestaXML.open('GET', 'stefanomerigo.github.io/TPS/prodotti.xml', true);
+    richiestaXML.send();
+
+    richiestaXML.onload = function () {
+        const datiXML = richiestaXML.responseXML;
+        const prodotti = datiXML.getElementsByTagName("prodotto");
+
+        for (let i = 0; i < prodotti.length; i++) {
+            let nomeProdotto = prodotti[i].getElementsByTagName("nome")[0].textContent;
+            let dettagliProdotto = prodotti[i].getElementsByTagName("dettagli")[0].textContent;
+            let prezzoProdotto = prodotti[i].getElementsByTagName("prezzo")[0].textContent;
+
+            aggiungiriga(nomeProdotto, dettagliProdotto, prezzoProdotto);
+        }
+    }
+}
+
+
+
+function LetturaJSON() {
+    resettaTabella();
+
+    let richiestaJSON = new XMLHttpRequest();
+    richiestaJSON.open('GET', 'stefanomerigo.github.io/TPS/prodotti.json', true);
+    richiestaJSON.send();
+
+    richiestaJSON.onload = function () {
+        const elencoProdotti = JSON.parse(richiestaJSON.responseText);
+
+        for (let i = 0; i < elencoProdotti.length; i++) {
+            let prodotto = elencoProdotti[i];
+            aggiungiriga(prodotto.nome, prodotto.dettagli, prodotto.prezzo);
+        }
+    }
+}
+
+
+function LetturaCSV() {
+    resettaTabella();
+
+    let richiestaCSV = new XMLHttpRequest();
+    richiestaCSV.open('GET', 'stefanomerigo.github.io/TPS/prodotti.csv', true);
+    richiestaCSV.send();
+
+    richiestaCSV.onload = function () {
+        const testoCSV = richiestaCSV.responseText;
+        const righeCSV = testoCSV.split("\n");
+
+        for (let i = 1; i < righeCSV.length; i++) {
+            const colonne = righeCSV[i].split(",");
+            aggiungiriga(colonne[0], colonne[1], colonne[2]);
+        }
+    }
+}
+
+
+function LetturaTXT() {
+    resettaTabella();
+
+    let richiestaTXT = new XMLHttpRequest();
+    richiestaTXT.open('GET', 'stefanomerigo.github.io/TPS/prodotti.txt', true);
+    richiestaTXT.send();
+
+    richiestaTXT.onload = function () {
+        const righeTXT = richiestaTXT.responseText.split("\n");
+
+        for (let i = 0; i < righeTXT.length; i++) {
+            const colonne = righeTXT[i].split(";");
+            aggiungiriga(colonne[0], colonne[1], colonne[2]);
+        }
+    }
+}
+
+function aggiungiriga(nome, dettagli, prezzo) {
+    const tabella = document.getElementById("tabella");
+
+    tabella.innerHTML +=
+        "<tr><td>" + nome + "</td><td>" + dettagli + "</td><td>" + prezzo + "</td></tr>"
+}
+    </script>
+</body>
+</html>

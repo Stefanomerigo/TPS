@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodotti>
+    <prodotto>
+        <nome>Monitor UltraHD</nome>
+        <dettagli>Informatica</dettagli>
+        <prezzo>349.99</prezzo>
+    </prodotto>
+    <prodotto>
+        <nome>Stampante 3D</nome>
+        <dettagli>Gadget</dettagli>
+        <prezzo>499.99</prezzo>
+    </prodotto>
+    <prodotto>
+        <nome>Drone Explorer</nome>
+        <dettagli>Gadget</dettagli>
+        <prezzo>799.99</prezzo>
+    </prodotto>
+    <prodotto>
+        <nome>Occhiali VR</nome>
+        <dettagli>Elettronica</dettagli>
+        <prezzo>299.99</prezzo>
+    </prodotto>
+    <prodotto>
+        <nome>Smart Lamp</nome>
+        <dettagli>Casa</dettagli>
+        <prezzo>89.99</prezzo>
+    </prodotto>
+</prodotti>
