@@ -168,7 +168,7 @@ function LetturaTXT() {
     resettaTabella();
 
     let richiestaTXT = new XMLHttpRequest();
-    richiestaTXT.open('GET', 'https://stefanomerigo.github.io/TPS/prodotti.json', true);
+    richiestaTXT.open('GET', 'https://stefanomerigo.github.io/TPS/prodotti.txt', true);
     richiestaTXT.send();
 
     richiestaTXT.onload = function () {
@@ -190,3 +190,4 @@ function aggiungiriga(nome, dettagli, prezzo) {
     </script>
 </body>
 </html>
+
