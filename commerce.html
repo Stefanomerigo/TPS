@@ -108,7 +108,7 @@ function LetturaXML() {
     resettaTabella();
 
     let richiestaXML = new XMLHttpRequest();
-    richiestaXML.open('GET', 'stefanomerigo.github.io/TPS/prodotti.xml', true);
+    richiestaXML.open('GET', 'https://stefanomerigo.github.io/TPS/prodotti.xml', true);
     richiestaXML.send();
 
     richiestaXML.onload = function () {
@@ -131,7 +131,7 @@ function LetturaJSON() {
     resettaTabella();
 
     let richiestaJSON = new XMLHttpRequest();
-    richiestaJSON.open('GET', 'stefanomerigo.github.io/TPS/prodotti.json', true);
+    richiestaJSON.open('GET', 'https://stefanomerigo.github.io/TPS/prodotti.json', true);
     richiestaJSON.send();
 
     richiestaJSON.onload = function () {
@@ -149,7 +149,7 @@ function LetturaCSV() {
     resettaTabella();
 
     let richiestaCSV = new XMLHttpRequest();
-    richiestaCSV.open('GET', 'stefanomerigo.github.io/TPS/prodotti.csv', true);
+    richiestaCSV.open('GET', 'https://stefanomerigo.github.io/TPS/prodotti.csv', true);
     richiestaCSV.send();
 
     richiestaCSV.onload = function () {
@@ -168,7 +168,7 @@ function LetturaTXT() {
     resettaTabella();
 
     let richiestaTXT = new XMLHttpRequest();
-    richiestaTXT.open('GET', 'stefanomerigo.github.io/TPS/prodotti.txt', true);
+    richiestaTXT.open('GET', 'https://stefanomerigo.github.io/TPS/prodotti.json', true);
     richiestaTXT.send();
 
     richiestaTXT.onload = function () {
